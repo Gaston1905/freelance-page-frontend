@@ -1,0 +1,51 @@
+<div class="container flex d-flex flex-column">
+
+
+  <form [formGroup]="form">
+  <div>
+    <p>Nombre <span class="text-danger fw-bold">*</span></p>
+    <div class="row">
+      <div class="col-6">
+      <input type="text" class="form-control form-control-sm" id="name" formControlName="name" required />
+      <label for="name" class="form-label">Nombre</label>
+    </div>
+    <div class="col-6">
+      <input type="text" class="form-control form-control-sm" id="message" formControlName="message" required/>
+      <label for="message" class="form-label">Apellido</label>
+    </div>
+    </div>
+  </div>
+
+  <div class="pt-4">
+    <p>Correo Electrónico <span class="text-danger fw-bold">*</span></p>
+    <input type="email" class="form-control form-control-sm" id="email" formControlName="email" required/>
+  </div>
+
+  <div class="pt-4">
+    <p>El sistema informático es:</p>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="personal">
+      <label class="form-check-label" for="flexCheckDefault">
+        Personal
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="comercial">
+      <label class="form-check-label" for="flexCheckDefault">
+        Comercial (Negocio)
+      </label>
+    </div>
+  </div>
+
+  <div class="pt-4">
+    <p>Contame un poco acerca de tus objetivos</p>
+    <div class="form-floating">
+      <textarea name="others" id="message" class="form-control" style="height: 100px" formControlName="message"></textarea>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-dark btn-lg w-25 mt-4" id="btn-shadow"  (click)="dataMail()">Enviar</button>
+
+</form>
+
+</div>

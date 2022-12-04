@@ -2,39 +2,62 @@
 
   <form [formGroup]="form">
   <div>
-    <p>Nombre <span class="text-danger fw-bold">*</span></p>
+    <p class="fw-bold">Nombre <span class="text-danger fw-bold">*</span></p>
     <div class="row">
       <div class="col-6">
-      <input type="text" class="form-control form-control-sm" id="name" formControlName="name">
-      <label for="name" class="form-label">Nombre</label>
+      <input type="text" class="form-control form-control-sm" id="name" formControlName="name" required>
+      <label for="name" class="form-label">Nombre/s</label>
+      <div *ngIf="form.controls['name'].invalid && form.controls['name'].touched" class="alert alert-danger">
+        <div *ngIf="form.controls['name'].errors?.['required']">
+          El nombre es obligatorio
+        </div>
+      </div>
     </div>
     <div class="col-6">
-      <input type="text" class="form-control form-control-sm" id="last_name" formControlName="last_name">
-      <label for="last_name" class="form-label">Apellido</label>
+      <input type="text" class="form-control form-control-sm" id="last_name" formControlName="last_name" required>
+      <label for="last_name" class="form-label">Apellido/s</label>
+      <div *ngIf="form.controls['last_name'].invalid && form.controls['last_name'].touched" class="alert alert-danger">
+        <div *ngIf="form.controls['last_name'].errors?.['required']">
+          El apellido es obligatorio
+        </div>
+      </div>
     </div>
     </div>
   </div>
 
   <div class="pt-4">
-    <p>Correo Electrónico <span class="text-danger fw-bold">*</span></p>
-    <input type="email" class="form-control form-control-sm" formControlName="email">
+    <p class="fw-bold">Correo Electrónico <span class="text-danger fw-bold">*</span></p>
+    <input type="email" class="form-control form-control-sm" id="email" formControlName="email" required>
+    <div *ngIf="form.controls['email'].invalid && form.controls['email'].touched" class="alert alert-danger mt-2">
+      <div *ngIf="form.controls['email'].errors?.['required']">
+        El email es obligatorio
+      </div>
+      <div *ngIf="form.controls['email'].errors?.['email']">
+        El email debe contener @
+      </div>
+    </div>
   </div>
 
   <div class="pt-4">
-    <p>¿Cómo se llama tu marca, emprendimiento o negocio? <span class="text-danger fw-bold">*</span></p>
-    <input type="text" class="form-control form-control-sm" formControlName="nameBusiness">
+    <p class="fw-bold">¿Cómo se llama tu marca, emprendimiento o negocio? <span class="text-danger fw-bold">*</span></p>
+    <input type="text" class="form-control form-control-sm" id="nameBusiness" formControlName="nameBusiness" required>
+    <div *ngIf="form.controls['nameBusiness'].invalid && form.controls['nameBusiness'].touched" class="alert alert-danger mt-2">
+      <div *ngIf="form.controls['nameBusiness'].errors?.['required']">
+        El nombre de su marca, emprendimiento o negocio es obligatorio
+      </div>
+    </div>
   </div>
 
   <div class="pt-4">
-    <p>¿Qué tipo de marca es?</p>
+    <p class="fw-bold">¿Qué tipo de marca es?</p>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="personal">
+      <input class="form-check-input" type="radio" name="radio" id="flexCheckDefault" formControlName="personal">
       <label class="form-check-label" for="flexCheckDefault">
         Marca Personal
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="commercial">
+      <input class="form-check-input" type="radio" name="radio" id="flexCheckDefault" formControlName="commercial">
       <label class="form-check-label" for="flexCheckDefault">
         Marca Comercial (Negocio)
       </label>
@@ -42,12 +65,17 @@
   </div>
 
   <div class="pt-4">
-    <p>Cuenta de instagram (de tu marca)</p>
-    <input type="text" class="form-control form-control-sm" placeholder="@" formControlName="account">
+    <p class="fw-bold">Cuenta de instagram (de tu marca)</p>
+    <input type="text" class="form-control form-control-sm" placeholder="@" formControlName="account" required>
+    <div *ngIf="form.controls['account'].invalid && form.controls['account'].touched" class="alert alert-danger mt-2">
+      <div *ngIf="form.controls['account'].errors?.['required']">
+        Debe ingresar al menos una cuenta (en caso de ser de otra red social deberá especificarla)
+      </div>
+    </div>
   </div>
 
   <div class="pt-4">
-    <p>¿Qué secciones deseas agregar en la página web?</p>
+    <p class="fw-bold">¿Qué secciones deseas agregar en la página web?</p>
     <div class="row">
       <div class="col-6">
         <div class="form-check mb-3">
@@ -112,32 +140,37 @@
             Login más campos editables
           </label>
         </div>
-
       </div>
     </div>
+    <p class="pt-5 fst-italic">Seleccione todas las que crea necesarias...</p>
   </div>
 
   <div class="pt-4">
-    <p>Otras</p>
+    <p class="fw-bold">Otras</p>
     <div class="form-floating">
       <textarea name="othersOptions" id="othersOptions" class="form-control" style="height: 100px" formControlName="othersOptions"></textarea>
     </div>
   </div>
 
   <div class="pt-4">
-    <p>¿Qué servicios ofreces? <span class="text-danger fw-bold">*</span></p>
+    <p class="fw-bold">¿Qué servicios ofreces? <span class="text-danger fw-bold">*</span></p>
     <div class="form-floating">
-      <textarea name="others" id="" class="form-control" style="height: 100px" formControlName="servicesBusiness"></textarea>
+      <textarea name="servicesBusiness" id="servicesBusiness" class="form-control" style="height: 100px" formControlName="servicesBusiness" required></textarea>
+      <div *ngIf="form.controls['servicesBusiness'].invalid && form.controls['servicesBusiness'].touched" class="alert alert-danger mt-2">
+        <div *ngIf="form.controls['servicesBusiness'].errors?.['required']">
+          Debe comentar los servicios que ofrece
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="pt-4">
-    <p>¿Deseas integrar otros métodos de pago? ¿Cuál?</p>
+    <p class="fw-bold">¿Deseas integrar otros métodos de pago? ¿Cuál?</p>
     <input type="text" class="form-control form-control-sm" formControlName="payment">
   </div>
 
   <div class="pt-4">
-    <p>Cuentas con...</p>
+    <p class="fw-bold">Cuentas con...</p>
     <div class="row">
       <div class="col-6">
         <div class="form-check mb-3">
@@ -179,23 +212,29 @@
           </label>
         </div>
       </div>
+      <p class="pt-3 fst-italic">Seleccione todas las que crea necesarias...</p>
     </div>
   </div>
 
   <div class="pt-4">
-    <p>Si tienes alguna página web de referencia, compártela aquí:</p>
-    <input type="text" class="form-control form-control-sm" formControlName="reference">
-    <p>Comparte una o varias páginas web que te gusten. Pon el enlace.</p>
+    <p class="fw-bold">Página web de referencia:</p>
+    <input type="text" class="form-control form-control-sm" formControlName="reference" required>
+    <div *ngIf="form.controls['reference'].invalid && form.controls['reference']" class="alert alert-danger mt-2">
+      <div *ngIf="form.controls['reference'].errors?.['required']">
+        Debes proveer una página web de referencia
+      </div>
+    </div>
+    <p class="pt-2 fst-italic">Comparte una o varias páginas web que te gusten. Pon el enlace.</p>
   </div>
 
   <div class="pt-4">
-    <p>¿Quieres contarme algo más o darme más detalles sobre tu página web?</p>
+    <p class="fw-bold">¿Quieres darme más detalles sobre tu próxima página web?</p>
     <div class="form-floating">
       <textarea name="others" id="" class="form-control" style="height: 100px" formControlName="others"></textarea>
     </div>
   </div>
 
-  <button type="submit" class="btn btn-dark btn-lg w-25 mt-4" id="btn-shadow" (click)="dataQuote()">Enviar</button>
+  <button type="submit" class="btn btn-dark btn-lg w-25 mt-4" id="btn-shadow" (click)="dataQuote()" [disabled]="form.invalid">Enviar</button>
 
 </form>
 

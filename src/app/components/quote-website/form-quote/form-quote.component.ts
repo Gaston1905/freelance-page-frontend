@@ -1,7 +1,10 @@
-import { QuoteForm } from './../../../model/quote.form.interface';
-import { EmailService } from './../../../services/email.service';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+
+import { QuoteForm } from './../../../model/quote.form.interface';
+import { EmailService } from './../../../services/email.service';
+
+import { AlertsComponent } from 'src/app/shared/alerts/alerts.component';
 
 @Component({
   selector: 'app-form-quote',
@@ -11,6 +14,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 export class FormQuoteComponent {
 
   form!: FormGroup;
+  sweetalert: AlertsComponent = new AlertsComponent;
 
   constructor(
     private emailSVC: EmailService,
@@ -52,43 +56,17 @@ export class FormQuoteComponent {
 
   dataQuote() {
 
-    const quoteData: QuoteForm = {
-      name: this.form.value.name,
-      last_name: this.form.value.last_name,
-      email: this.form.value.email,
-      nameBusiness: this.form.value.nameBusiness,
-      personal: this.form.value.personal,
-      commercial: this.form.value.commercial,
-      account: this.form.value.account,
-      simplePage: this.form.value.simplePage,
-      about: this.form.value.about,
-      pagePerService: this.form.value.pagePerService,
-      pageServices: this.form.value.pageServices,
-      formContact: this.form.value.formContact,
-      eCommerce: this.form.value.eCommerce,
-      eLearning: this.form.value.eLearning,
-      blog: this.form.value.blog,
-      pageLinks: this.form.value.pageLinks,
-      buyDigitalProducts: this.form.value.buyDigitalProducts,
-      loginAndEditFields: this.form.value.loginAndEditFields,
-      othersOptions: this.form.value.othersOptions,
-      servicesBusiness: this.form.value.servicesBusiness,
-      payment: this.form.value.payment,
-      domain: this.form.value.domain,
-      logo: this.form.value.logo,
-      images: this.form.value.images,
-      hosting: this.form.value.hosting,
-      paletteColour: this.form.value.paletteColour,
-      texts: this.form.value.texts,
-      reference: this.form.value.reference,
-      others: this.form.value.others
+    const quoteData: QuoteForm = this.form.value;
+
+    if(this.form.valid) {
+      this.sweetalert.ChargeAlert();
+      this.emailSVC.sendQuoteForm(quoteData).subscribe((data) => {
+        this.sweetalert.SuccessAlert();
+        this.form.reset();
+      })
+    } else{
+      this.sweetalert.IncompletDataAlert();
     }
-
-    console.log(quoteData)
-
-    this.emailSVC.sendQuoteForm(quoteData).subscribe((data) => {
-      console.log(data)
-    })
   }
 
 }

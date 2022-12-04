@@ -2,42 +2,65 @@
 
   <form [formGroup]="form">
     <div>
-      <p>Nombre <span class="text-danger fw-bold">*</span></p>
+      <p class="fw-bold">Nombre <span class="text-danger fw-bold">*</span></p>
       <div class="row">
         <div class="col-6">
-        <input type="text" class="form-control form-control-sm" id="name" formControlName="name">
+        <input type="text" class="form-control form-control-sm" id="name" formControlName="name" required />
         <label for="name" class="form-label">Nombre</label>
+        <div *ngIf="form.controls['name'].invalid && form.controls['name'].touched" class="alert alert-danger">
+          <div *ngIf="form.controls['name'].errors?.['required']">
+            El nombre es obligatorio
+          </div>
+        </div>
       </div>
       <div class="col-6">
-        <input type="text" class="form-control form-control-sm" id="last_name" formControlName="last_name">
+        <input type="text" class="form-control form-control-sm" id="last_name" formControlName="last_name" required />
         <label for="last_name" class="form-label">Apellido</label>
+        <div *ngIf="form.controls['last_name'].invalid && form.controls['last_name'].touched" class="alert alert-danger">
+          <div *ngIf="form.controls['last_name'].errors?.['required']">
+            El apellido es obligatorio
+          </div>
+        </div>
       </div>
       </div>
     </div>
 
     <div class="pt-4">
-      <p>Correo Electrónico <span class="text-danger fw-bold">*</span></p>
-      <input type="text" class="form-control form-control-sm" formControlName="email">
+      <p class="fw-bold">Correo Electrónico <span class="text-danger fw-bold">*</span></p>
+      <input type="text" class="form-control form-control-sm" formControlName="email" required />
+      <div *ngIf="form.controls['email'].invalid && form.controls['email'].touched" class="alert alert-danger mt-2">
+        <div *ngIf="form.controls['email'].errors?.['required']">
+          El email es obligatorio
+        </div>
+        <div *ngIf="form.controls['email'].errors?.['email']">
+          El email debe contener @
+        </div>
+      </div>
     </div>
 
     <div class="pt-4">
-      <p>Cuenta de instagram (de tu marca)</p>
-      <input type="text" class="form-control form-control-sm" placeholder="@" formControlName="account">
+      <p class="fw-bold">Cuenta de instagram (de tu marca)</p>
+      <input type="text" class="form-control form-control-sm" placeholder="@" formControlName="account" required />
     </div>
 
     <div class="pt-4">
-      <p>Página Web</p>
-      <input type="text" class="form-control form-control-sm" formControlName="website">
+      <p class="fw-bold">Página Web</p>
+      <input type="text" class="form-control form-control-sm" formControlName="website" required />
     </div>
 
     <div class="pt-4">
-      <p>Comentarios adicionales</p>
+      <p class="fw-bold">Comentarios adicionales</p>
       <div class="form-floating">
-        <textarea name="others" id="" class="form-control" style="height: 100px" formControlName="others"></textarea>
+        <textarea name="others" id="others" class="form-control" style="height: 100px" formControlName="others" required></textarea>
+        <div *ngIf="form.controls['others'].invalid && form.controls['others'].touched" class="alert alert-danger mt-2">
+          <div *ngIf="form.controls['others'].errors?.['required']">
+            Escriba los comentarios que crea necesario para la auditoría
+          </div>
+        </div>
       </div>
     </div>
 
-    <button type="submit" class="btn btn-dark btn-lg w-25 mt-4" id="btn-shadow" (click)="dataAudit()">Enviar</button>
+    <button type="submit" class="btn btn-dark btn-lg w-25 mt-4" id="btn-shadow" (click)="dataAudit()" [disabled]="form.invalid">Enviar</button>
 
   </form>
 

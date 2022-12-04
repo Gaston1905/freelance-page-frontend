@@ -4,6 +4,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { systemForm } from './../../../model/system.form.interface';
 import { EmailService } from './../../../services/email.service';
 
+import { AlertsComponent } from 'src/app/shared/alerts/alerts.component';
+
 @Component({
   selector: 'app-form-system',
   templateUrl: './form-system.component.html',
@@ -12,6 +14,7 @@ import { EmailService } from './../../../services/email.service';
 export class FormSystemComponent {
 
   form!: FormGroup;
+  sweetalert: AlertsComponent = new AlertsComponent;
 
   constructor(
       private formBuilder: FormBuilder,
@@ -30,17 +33,18 @@ export class FormSystemComponent {
   }
 
   dataSystem() {
-    const systemData: systemForm = {
-      name: this.form.value.name,
-      last_name: this.form.value.last_name,
-      email: this.form.value.email,
-      personal: this.form.value.personal,
-      comercial: this.form.value.comercial,
-      others: this.form.value.others
-    }
-    this.emailSVC.sendSystemForm(systemData).subscribe((data) => {
-      console.log(data)
-    })
+
+    const systemData: systemForm = this.form.value;
+
+    if(this.form.valid) {
+      this.sweetalert.ChargeAlert();
+      this.emailSVC.sendSystemForm(systemData).subscribe((data) => {
+        this.sweetalert.SuccessAlert();
+        this.form.reset();
+      })
+    } else {
+      this.sweetalert.IncompletDataAlert()
+  }
   }
 
 }

@@ -4,6 +4,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { AuditForm } from 'src/app/model/audit.form.interface';
 import { EmailService } from 'src/app/services/email.service';
 
+import { AlertsComponent } from 'src/app/shared/alerts/alerts.component';
+
 @Component({
   selector: 'app-form-audit',
   templateUrl: './form-audit.component.html',
@@ -12,6 +14,8 @@ import { EmailService } from 'src/app/services/email.service';
 export class FormAuditComponent  {
 
   form!: FormGroup;
+  sweetalert: AlertsComponent = new AlertsComponent;
+  loading: boolean = false;
 
   constructor(
               private formBuilder: FormBuilder,
@@ -31,18 +35,21 @@ export class FormAuditComponent  {
 
   dataAudit() {
 
-    const auditData: AuditForm = {
-      name: this.form.value.name,
-      last_name: this.form.value.last_name,
-      email: this.form.value.email,
-      account: this.form.value.account,
-      website: this.form.value.website,
-      others: this.form.value.others
+    const auditData: AuditForm = this.form.value;
+
+
+
+    if(this.form.valid) {
+      this.loading = true;
+      this.sweetalert.ChargeAlert()
+      this.emailSVC.sendAuditForm(auditData).subscribe((data) => {
+        this.sweetalert.SuccessAlert()
+      })
+    } else {
+      this.sweetalert.IncompletDataAlert()
     }
 
-    this.emailSVC.sendAuditForm(auditData).subscribe((data) => {
-      console.log(data)
-    })
-  }
+    }
+
 
 }

@@ -1,3 +1,4 @@
+import { AlertsComponent } from './alerts/alerts.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -10,7 +11,8 @@ import { CommonModule } from '@angular/common';
   declarations: [
     HomeComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    AlertsComponent
   ],
   imports: [
     CommonModule
@@ -18,7 +20,8 @@ import { CommonModule } from '@angular/common';
   exports: [
     HomeComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    AlertsComponent
   ]
 })
 export class SharedModule { }

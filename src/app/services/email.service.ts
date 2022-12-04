@@ -1,20 +1,30 @@
-import { systemForm } from './../model/system.form.interface';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+
+import { systemForm } from './../model/system.form.interface';
+import { AuditForm } from './../model/audit.form.interface';
+import { QuoteForm } from '../model/quote.form.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmailService {
 
-  API_URL = 'http://localhost:3000';
+  API_URL = environment.API_URL;
 
   constructor( private http: HttpClient ) { }
 
-  sendMail(data: systemForm) {
-    return this.http.post(`${this.API_URL}/send`, data)
+  sendSystemForm(systemData: systemForm) {
+    return this.http.post(`${this.API_URL}/sendSystem`, systemData)
   }
 
+  sendAuditForm(auditData: AuditForm) {
+    return this.http.post(`${this.API_URL}/sendAudit`, auditData)
+  }
+
+  sendQuoteForm(quoteData: QuoteForm) {
+    return this.http.post(`${this.API_URL}/sendQuote`, quoteData)
+  }
 
 }

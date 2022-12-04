@@ -1,8 +1,8 @@
-export interface systemForm {
+export interface AuditForm {
   name: string,
   last_name: string,
   email: string,
-  personal: boolean,
-  comercial: boolean,
+  account: string,
+  website: string,
   others: string
 }

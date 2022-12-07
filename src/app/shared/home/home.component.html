@@ -8,16 +8,16 @@
       <div class="col-lg-6">
         <h1 class="display-5 fs-1 fw-bold lh-1 mb-3">¡Hola! Soy Gastón Gaitán...</h1>
         <p class="lead">¿Estás buscando ir más allá con tu negocio, marca personal o perfil profesional? Estas en el lugar indicado</p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <div class="d-grid gap-2 d-md-flex">
           <a href="https://gaston-gaitan.web.app/"> <button type="button" class="btn btn-primary btn-lg px-4 me-md-2" id="btn-shadow">Mi Web</button></a>
-          <button type="button" class="btn btn-outline-secondary btn-lg px-4" id="btn-shadow">Servicios</button>
+          <a> <button type="button" class="btn btn-outline-secondary btn-lg px-4" id="btn-shadow" (click)='scroll(services)'>Servicios</button></a>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="container py-5 flex d-flex flex-column">
-      <h3 class="text-center" id="services">¿En qué puedo ayudarte?</h3>
+  <div class="container py-5 flex d-flex flex-column" #services>
+      <h3 class="text-center" >¿En qué puedo ayudarte?</h3>
 
       <p class="text-center fs-5 pt-4">¿Necesitas una pagina web?</p>
       <button type="button" class="btn btn-dark w-25 mx-auto" id="btn-shadow"><a href="/quote" class="text-white">Cotizar tu página web</a></button>

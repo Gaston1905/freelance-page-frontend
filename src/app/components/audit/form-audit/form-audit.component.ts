@@ -15,7 +15,7 @@ export class FormAuditComponent  {
 
   form!: FormGroup;
   sweetalert: AlertsComponent = new AlertsComponent;
-  loading: boolean = false;
+  
 
   constructor(
               private formBuilder: FormBuilder,
@@ -40,10 +40,10 @@ export class FormAuditComponent  {
 
 
     if(this.form.valid) {
-      this.loading = true;
-      this.sweetalert.ChargeAlert()
+      this.sweetalert.ChargeAlert();
       this.emailSVC.sendAuditForm(auditData).subscribe((data) => {
-        this.sweetalert.SuccessAlert()
+        this.sweetalert.SuccessAlert();
+        this.form.reset();
       })
     } else {
       this.sweetalert.IncompletDataAlert()

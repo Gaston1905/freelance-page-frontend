@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  scroll(el:HTMLElement){
+    el.scrollIntoView()
+  }
+
   constructor() { }
 
   ngOnInit(): void {

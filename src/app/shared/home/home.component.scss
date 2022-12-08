@@ -2,6 +2,64 @@
   box-shadow: 1px 1px 3px 1px rgba(39, 39, 39, 0.6);
 }
 
+@media (max-width: 320px) {
+  #btn-shadow {
+    font-size: .7em;
+  }
+}
+
+@media (max-width: 247px) {
+  #btn-shadow {
+    font-size: .55em;
+  }
+}
+
+@media (max-width: 247px) {
+  #btn-shadow {
+    font-size: .50em;
+  }
+}
+
 a:link, a:visited, a:active {
   text-decoration:none;
+}
+
+#img-header {
+  filter: drop-shadow(2px 2px 1px #454545cf);
+}
+
+@media (max-width: 991px) {
+  #description-header {
+    box-shadow: 2px 2px 4px 1px rgba(39, 39, 39, 0.6);
+    padding: 2em;
+    border-radius: 2%;
+    background-color: #6C757D;
+    color:white;
+    margin-top: -.5em;
+    z-index: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  #btn-header {
+    display: flex! important;
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 991px) {
+  #header {
+    border: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .btn-responsive {
+    background-color: white;
+
+  }
+  .btn-responsive:hover {
+    background-color: black;
+    color: white;
+  }
 }

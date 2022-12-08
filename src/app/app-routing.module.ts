@@ -7,6 +7,7 @@ import { HomeComponent } from './shared/home/home.component';
 import { QuoteWebsiteComponent } from './components/quote-website/quote-website.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent },
   { path: 'quote', component: QuoteWebsiteComponent },
   { path: 'audit', component: AuditComponent },

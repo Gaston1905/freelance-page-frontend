@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SharedModule } from './../shared/shared.module';
+import { ComponentRoutingModule } from './components-routing.module';
 
 import { FormSystemComponent } from './system/form-system/form-system.component';
 import { SystemComponent } from './system/system.component';
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ComponentRoutingModule
   ],
   exports: [
     AuditComponent,

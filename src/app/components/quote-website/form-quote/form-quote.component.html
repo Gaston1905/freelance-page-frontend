@@ -212,29 +212,30 @@
           </label>
         </div>
       </div>
-      <p class="pt-3 fst-italic">Seleccione todas las que crea necesarias...</p>
+      <p class="pt-3 fst-italic">Seleccione todas las que creas necesarias...</p>
     </div>
   </div>
 
   <div class="pt-4">
     <p class="fw-bold">Página web de referencia:</p>
-    <input type="text" class="form-control form-control-sm" formControlName="reference" required>
-    <div *ngIf="form.controls['reference'].invalid && form.controls['reference']" class="alert alert-danger mt-2">
+    <input type="text" class="form-control form-control-sm" id="reference" formControlName="reference" required>
+    <div *ngIf="form.controls['reference'].invalid && form.controls['reference'].touched" class="alert alert-danger mt-2">
       <div *ngIf="form.controls['reference'].errors?.['required']">
-        Debes proveer una página web de referencia
+        Debes introducir al menos una web de referencia
       </div>
     </div>
-    <p class="pt-2 fst-italic">Comparte una o varias páginas web que te gusten. Pon el enlace.</p>
+
+    <p class="pt-2 fst-italic">Comparte una o varias enlace/s de páginas web que te gusten</p>
   </div>
 
   <div class="pt-4">
-    <p class="fw-bold">¿Quieres darme más detalles sobre tu próxima página web?</p>
+    <p class="fw-bold">¿Podrías darme más detalles sobre tu próxima página web?</p>
     <div class="form-floating">
       <textarea name="others" id="" class="form-control" style="height: 100px" formControlName="others"></textarea>
     </div>
   </div>
 
-  <button type="submit" class="btn btn-dark btn-lg w-25 mt-4" id="btn-shadow" (click)="dataQuote()" [disabled]="form.invalid">Enviar</button>
+  <button type="submit" class="btn btn-dark btn-lg mt-4" id="btn-shadow" (click)="dataQuote()" [disabled]="form.invalid">Enviar</button>
 
 </form>
 

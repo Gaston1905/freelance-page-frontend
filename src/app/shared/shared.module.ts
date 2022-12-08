@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ButtonUpComponent } from './button-up/button-up.component';
 
 
 
@@ -12,7 +13,8 @@ import { CommonModule } from '@angular/common';
     HomeComponent,
     FooterComponent,
     NavbarComponent,
-    AlertsComponent
+    AlertsComponent,
+    ButtonUpComponent
   ],
   imports: [
     CommonModule
@@ -21,7 +23,8 @@ import { CommonModule } from '@angular/common';
     HomeComponent,
     FooterComponent,
     NavbarComponent,
-    AlertsComponent
+    AlertsComponent,
+    ButtonUpComponent
   ]
 })
 export class SharedModule { }

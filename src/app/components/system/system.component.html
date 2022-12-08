@@ -1,6 +1,7 @@
+<span #up></span>
 <app-navbar></app-navbar>
 
-<div class="px-4 pt-1 my-5 text-center">
+<div class="container px-4 pt-1 my-5 text-center">
   <h3 class="display-5 fs-1 fw-bold lh-1 mb-3">Sistemas informáticos</h3>
   <div class="col-lg-6 mx-auto">
     <p class="lead">Un sistema informático puede ayudarte a tomar decisiones personales y comerciales que sean de transformación</p>
@@ -18,7 +19,7 @@
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
 
       <div class="col-10 col-sm-8 col-lg-6 pt-5">
-        <img src="../../../assets/Assessor.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+        <img src="../../../assets/Assessor.png" class="d-block mx-lg-auto img-fluid" id="img-assessor" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
       </div>
 
       <div class="col-lg-6">
@@ -78,3 +79,4 @@
 </div>
 
 <app-form-system></app-form-system>
+<app-button-up (click)='scroll(up)'></app-button-up>

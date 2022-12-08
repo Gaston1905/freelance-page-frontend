@@ -8,3 +8,158 @@ hr {
   width: 90%;
   margin-top: -.4em;
 }
+
+@media (max-width: 467px) {
+  hr {
+    margin-top: -4em;
+  }
+}
+
+@media (max-width: 777px) {
+  #btn-responsive {
+    visibility: hidden;
+  }
+}
+
+#btn-dropdown {
+  visibility: hidden;
+}
+
+@media (max-width: 777px) {
+  #btn-dropdown {
+    visibility: visible;
+    // padding-right: 2em;
+    padding-top: .5em;
+  }
+}
+
+@media (max-width: 656px) {
+  #btn-dropdown {
+
+    padding-top: 1em;
+  }
+}
+
+@media (max-width: 572px) {
+  #btn-dropdown {
+    padding-top: 1.1em;
+    margin-left: -1em;
+  }
+}
+
+@media (max-width: 552px) {
+  #btn-dropdown {
+    margin-left: -1em;
+  }
+}
+
+@media (max-width: 526px) {
+  #btn-dropdown {
+    margin-left: -1.8em;
+  }
+}
+
+@media (max-width: 500px) {
+  #btn-dropdown {
+    margin-left: -2.3em;
+  }
+}
+
+@media (max-width: 499px) {
+  #btn-dropdown {
+    margin-left: -1.5em;
+  }
+}
+
+@media (max-width: 477px) {
+  #btn-dropdown {
+    margin-left: -2.3em;
+  }
+}
+
+@media (max-width: 467px) {
+  #btn-dropdown {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 777px) {
+  #container-responsive {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 467px) {
+  #container-responsive {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 777px) {
+  #text-nav {
+    padding-left: 1em;
+  }
+}
+
+@media (max-width: 650px) {
+  #text-nav {
+    padding-left: 3em;
+  }
+}
+
+@media (max-width: 552px) {
+  #text-nav {
+    font-size: .85em;
+  }
+}
+
+@media (max-width: 552px) {
+  #subtitle {
+    font-size: .85em;
+  }
+}
+
+@media (max-width: 540px) {
+  #text-nav {
+    font-size: .8em;
+  }
+}
+
+@media (max-width: 540px) {
+  #subtitle {
+    font-size: .8em;
+  }
+}
+
+@media (max-width: 499px) {
+  #text-nav {
+    font-size: .75em;
+  }
+}
+
+@media (max-width: 499px) {
+  #subtitle {
+    font-size: .75em;
+  }
+}
+
+#btn-dropdown-responsive {
+  visibility: hidden;
+  right: 2.5em;
+  position:fixed;
+}
+
+@media (max-width: 467px) {
+  #btn-dropdown-responsive {
+    visibility: visible;
+  }
+}
+
+

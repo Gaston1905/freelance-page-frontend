@@ -1,6 +1,7 @@
+<span #up></span>
 <app-navbar></app-navbar>
 
-<div class="container col-xxl-8 pt-4 pb-5">
+<div class="container col-xxl-8 pt-5 mt-5 pb-5">
   <div class="row flex-lg-row-reverse align-items-center g-5 pb-5">
 
     <div class="col-lg-6">
@@ -8,9 +9,9 @@
       <h4>La respuesta es sí, impulsa tus ideas hoy...</h4>
       <div class="d-grid gap-2 d-md-flex justify-content-md-start">
         <ul>
-          <li class="pt-2">✔️ Mayor visibilidad para tu marca o perfil profesional.</li>
+          <li class="pt-2">✔️ Mayor visibilidad para tu negocio, marca personal o perfil profesional.</li>
           <li class="pt-2">✔️ Procesamiento SEO. Optimización del sitio web entre los motores de búsquedas actuales.</li>
-          <li class="pt-2">✔️ Potenciar tu marca o tu perfil profesional sin depender de redes sociales.</li>
+          <li class="pt-2">✔️ Potenciar tu negocio, marca personal o tu perfil profesional a partir de unificar y personalizar tu tráfico.</li>
         </ul>
       </div>
     </div>
@@ -20,22 +21,27 @@
   </div>
 </div>
 
-  <div class="bg-secondary">
+  <div class="bg-secondary" id="shadow-section">
     <div class="container py-3 row text-white text-center mx-auto">
+      <p class="fs-1">Las páginas que desarrollo son</p>
       <div class="col-lg-3">
-        <p class="fw-bold">Responsive</p>
+        <img src="../../../assets/responsive-design.svg" alt="responsive-icon" width="150" id="icon-feature">
+        <p class="fw-bold fs-4">Responsivas</p>
         <p>Diseño adaptado para todos los soportes digitales de la actualidad</p>
       </div>
       <div class="col-lg-3">
-        <p class="fw-bold">Diseño UX / UI</p>
-        <p>Experiencia e interface pensada en el usuario</p>
+        <img src="../../../assets/clock-time-2.svg" alt="timer-icon" width="90" id="icon-feature" class="pt-4 mt-1">
+        <p class="fw-bold pt-4 fs-4" id="title-velocity">Veloces</p>
+        <p>Optimización de recursos pensada para una experiencia más veloz </p>
       </div>
       <div class="col-lg-3">
-        <p class="fw-bold">Intuitivas</p>
-        <p>Navegación fluida de principio a fin</p>
+        <img src="../../../assets/multy-user.svg" alt="user-icon" width="105" id="icon-feature" class="pt-4">
+        <p class="fw-bold fs-4" id="icon-accessibility">Accesibles</p>
+        <p>Prácticas inclusivas que garantizan la accesibilidad al sitio web. Pensadas para capacidades diferentes</p>
       </div>
       <div class="col-lg-3">
-        <p class="fw-bold">SEO friendly</p>
+        <img src="../../../assets/local-SEO.svg" alt="search-seo-icon" width="100" id="icon-feature" class="pt-4">
+        <p class="fw-bold fs-4" id="icon-seo">SEO friendly</p>
         <p>Estrategía digital para mejorar la posición en los motores de búsquedas</p>
       </div>
     </div>
@@ -48,4 +54,5 @@
 </div>
 
 <app-form-quote></app-form-quote>
+<app-button-up (click)='scroll(up)'></app-button-up>
 

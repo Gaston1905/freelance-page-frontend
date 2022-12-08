@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuditComponent {
 
+  scroll(el:HTMLElement){
+    el.scrollIntoView()
+  }
+
   constructor( ) {}
 
 }

@@ -1,4 +1,12 @@
 li {
   list-style: none;
- }
+}
+
+#shadow-section {
+  box-shadow: 0 0 6px 4px rgba( 0, 0, 0, .6);
+}
+
+#shadow-image {
+  filter: invert(100%)  drop-shadow(2px 2px 4px #1f1e1ed5);
+}
 

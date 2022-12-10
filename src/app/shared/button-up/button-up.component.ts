@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./button-up.component.scss']
 })
 export class ButtonUpComponent implements OnInit {
+  
 
   constructor() { }
 

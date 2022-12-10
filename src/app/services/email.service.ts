@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
 
 import { systemForm } from './../model/system.form.interface';
 import { AuditForm } from './../model/audit.form.interface';
@@ -11,7 +10,7 @@ import { QuoteForm } from '../model/quote.form.interface';
 })
 export class EmailService {
 
-  API_URL = environment.API_URL;
+  API_URL = 'https://freelance-backend-vn9p.onrender.com'
 
   constructor( private http: HttpClient ) { }
 

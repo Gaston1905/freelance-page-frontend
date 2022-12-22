@@ -1,0 +1,50 @@
+<span #up></span>
+<app-navbar></app-navbar>
+
+<div class="container col-xxl-8 pt-3 pb-5">
+  <div class="row flex-lg-row-reverse align-items-center g-5 pb-5">
+
+    <div class="col-10 col-sm-8 col-lg-6 pt-5">
+      <img src="../../../assets/niña.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+    </div>
+
+    <div class="col-lg-6">
+      <h3 class="display-5 fs-3 fw-bold lh-1 mb-3">Aprendizaje de programación en los primeros años de vida</h3>
+      <h4 class="fs-5">¿Qúe beneficios tiene?</h4>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <ul>
+          <li>✔️ Ayuda a entender el funcionamiento de los dispositivos que usamos a diario: descubriendo cómo funciona la tecnología se pueden comprender mejor todas sus posibilidades.</li>
+          <li class="pt-2">✔️ aprendiendo a programar se adquiere conocimientos de vital importancia en la actualidad y de mayor relevancia aún en el futuro. En las tempranas edades es común enfrentarse a bloqueos y frustraciones diariamente, aprendiendo a programar en edades tempranas, permite sobreponerse a estas frustraciones con un esfuerzo menor, lo que será muy útil a futuro.</li>
+          <li class="pt-2">✔️ para programar es necesario desarrollar el pensamiento computacional, un tipo de pensamiento que estructura la mente y ordena las ideas. Esto permite dividir un problema grande en problemas más pequeños.</li>
+          <li class="pt-2">✔️ Al programar se crea algo de la nada. La programación permite desarrollar la imaginación para innovar y ver su aplicación en muchas disciplinas diferentes.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container col-xxl-8 px-4 pb-5">
+  <div class="row flex-lg-row-reverse align-items-center g-5 pb-5">
+
+    <div class="col-lg-6">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <ul>
+          <li>✔️ Es una manera de aprender jugando: permite experimentar, compartir, razonar y entender cómo están hechas las cosas para posteriormente hacer sus propias creaciones. Aprendiendo a programar se pasa de ser meros espectadores a creadores.</li>
+          <li class="pt-2">✔️ Trabajo en equipo: La programación ayuda en la toma de decisiones y en el trabajo en equipo, pues programar se apoya en el trabajo colaborativo en el que cada quien desempeña un rol y aporta algo a los demás.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="../../../assets/niño.jpg" class="d-block mx-lg-auto img-fluid" id="image-scale" alt="Bootstrap Themes" width="250" height="100" loading="lazy">
+    </div>
+  </div>
+</div>
+
+
+<div class="container py-5 flex d-flex flex-column">
+  <h3 class="display-5 fs-3 fw-bold lh-1 mb-3 text-center">En el siguiente enlace de descarga vas a poder encontrar más detalles</h3>
+  <button type="button" class="btn btn-dark mx-auto" id="btn-shadow"><a href="https://drive.google.com/file/d/1m8_p76ZFECcSK-iZ7oRKk5Pi2kkC21r9/view?usp=share_link" class="text-white">Descargar</a></button>
+</div>
+
+<app-button-up (click)='scroll(up)'></app-button-up>

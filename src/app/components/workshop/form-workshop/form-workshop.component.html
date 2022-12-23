@@ -32,7 +32,7 @@
     </div>
 
     <div class="container py-5 flex d-flex flex-column">
-      <button type="submit" class="btn btn-dark mx-auto" id="btn-shadow" [disabled]="form.invalid"><a href="https://drive.google.com/file/d/1m8_p76ZFECcSK-iZ7oRKk5Pi2kkC21r9/view?usp=share_link" class="text-white">Descargar</a></button>
+      <button type="submit" class="btn btn-dark mx-auto" [disabled]="form.invalid" id="btn-shadow" (click)="dataWorkshop()"><a href="https://drive.google.com/file/d/1m8_p76ZFECcSK-iZ7oRKk5Pi2kkC21r9/view?usp=share_link" class="text-white">Descargar</a></button>
     </div>
 
   </form>

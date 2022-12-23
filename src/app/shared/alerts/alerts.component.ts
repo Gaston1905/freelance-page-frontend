@@ -51,4 +51,24 @@ export class AlertsComponent implements OnInit {
   });
   }
 
+  WorkshopChargeAlert() {
+    Swal.fire({
+      title: 'Por favor espere...!',
+      html: 'Cargando enlace',
+      allowOutsideClick: false,
+      didOpen: () => {
+          Swal.showLoading(null)
+      },
+  });
+  }
+
+  WorkshopAlert() {
+  Swal.fire({
+    icon: 'success',
+    title: '¡Gracias por su espera! en el enlace podrá acceder a la información',
+    showConfirmButton: false,
+    timer: 2000
+  })
+  }
+
 }

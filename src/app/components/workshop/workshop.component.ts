@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,9 +12,11 @@ export class WorkshopComponent implements OnInit {
     el.scrollIntoView()
   }
 
-  constructor() { }
+  constructor( ) { }
 
   ngOnInit(): void {
+
+
   }
 
 }

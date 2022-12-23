@@ -1,0 +1,40 @@
+<div class="container flex d-flex flex-column">
+  <div class="container col-8">
+  <h3 class="display-5 fs-4 fw-bold lh-2 mb-3 text-center">Por favor completa el formulario para acceder a la descarga de la información detallada del curso</h3>
+  </div>
+  <form [formGroup]="form">
+
+    <div>
+      <p class="fw-bold">Nombre <span class="text-danger fw-bold">*</span></p>
+      <div class="row">
+        <div class="col-6">
+          <input type="text" class="form-control form-control-sm" id="name" formControlName="name" required />
+          <div *ngIf="form.controls['name'].invalid && form.controls['name'].touched" class="alert alert-danger">
+            <div *ngIf="form.controls['name'].errors?.['required']">
+              El nombre es obligatorio
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-4">
+      <p class="fw-bold">Correo Electrónico <span class="text-danger fw-bold">*</span></p>
+      <input type="email" class="form-control form-control-sm" id="email" formControlName="email" placeholder="email@example.com" required />
+      <div *ngIf="form.controls['email'].invalid && form.controls['email'].touched" class="alert alert-danger mt-2">
+        <div *ngIf="form.controls['email'].errors?.['required']">
+          El email es obligatorio
+        </div>
+        <div *ngIf="form.controls['email'].errors?.['email']">
+          El email debe contener @
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-5 flex d-flex flex-column">
+      <button type="submit" class="btn btn-dark mx-auto" id="btn-shadow" [disabled]="form.invalid"><a href="https://drive.google.com/file/d/1m8_p76ZFECcSK-iZ7oRKk5Pi2kkC21r9/view?usp=share_link" class="text-white">Descargar</a></button>
+    </div>
+
+  </form>
+
+</div>

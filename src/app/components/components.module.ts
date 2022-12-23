@@ -13,6 +13,7 @@ import { AuditComponent } from './audit/audit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { WorkshopComponent } from './workshop/workshop.component';
+import { FormWorkshopComponent } from './workshop/form-workshop/form-workshop.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { WorkshopComponent } from './workshop/workshop.component';
     SystemComponent,
     FormSystemComponent,
     WorkshopComponent,
+    FormWorkshopComponent,
   ],
   imports: [
     CommonModule,
